@@ -1,4 +1,7 @@
-var timeLeft = "";
+
+
+var timeLeft = 90;
+setInterval - // JS API
 var questionPointer = [0];
 var btnInitial = document.querySelector("btnInitial");
 var userScore = "";
@@ -89,18 +92,36 @@ var questions = [
 
 // Do i have 1 butt
 
+// display question
 
 
-
-btnInitial.onclick = function() {
+btnInitial.addEventListener("click", startGame) {
     // When our initialbutton is clicked, 
         // Hide initial question
-        // run function quiz()
+        // startGame function (init function)
+        // go back to questions[0]
 
 }
 
+function startGame() {
+
+    // run function timer
+    // run function quiz
+}
+
+
+function timer() {
+        // setInterval(JS API) 90 - 1}\
+        function quiz()
+
+}
+
+// container for all 4 buttons
+// addEventListener for the 4 buttons
+    
 
 function quiz() {
+
         // for loop determining which question we are on
         // Display questions[i]
         // Display questions.choices[0-3]
