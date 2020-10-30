@@ -1,4 +1,5 @@
 var timeLeft = "";
+var currentQuestion = "";
 var questions = [
     {
         question: "The amount of light on a photograph is known as the:",
@@ -62,3 +63,27 @@ var questions = [
     }
     
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for ( var i=0; i < questions.length; i++) {
+    var question = questions[i].question;
+
+}
