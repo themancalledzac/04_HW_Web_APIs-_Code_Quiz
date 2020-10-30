@@ -1,5 +1,18 @@
 var timeLeft = "";
-var currentQuestion = "";
+var questionPointer = [0];
+var btnInitial = document.querySelector("btnInitial");
+var userScore = "";
+var scoreboard = [
+    {
+        User: "",
+        Score: ""
+    },
+    {
+        User: "user",
+        Score: "score"
+    }
+]
+
 var questions = [
     {
         question: "The amount of light on a photograph is known as the:",
@@ -64,14 +77,60 @@ var questions = [
     
 ]
 
+ // Do we need a variable for each of the 4 buttons?
+ // var btn1
+ // var btn2
+ // var btn3
+ // var btn4
+ // Each of these buttons are given new data for each questions[i]
 
 
 
 
+// Do i have 1 butt
 
 
 
 
+btnInitial.onclick = function() {
+    // When our initialbutton is clicked, 
+        // Hide initial question
+        // run function quiz()
+
+}
+
+
+function quiz() {
+        // for loop determining which question we are on
+        // Display questions[i]
+        // Display questions.choices[0-3]
+        // Do we put the btn.onclick inside this function? or split it up?
+        // Event listener for which button is clicked.
+        // if questionPointer[i] = answer[i] , move to questions[i+1]
+        // else timeLeft = -10;
+        // if timeLeft <= 0,
+            // run fuction conclusion()
+        // else move to quesions[i+1]
+        //
+    }
+
+function conclusion() {
+
+        // Prompt user to save Initials
+        // on enter
+        // display leaderboard
+                // initials, with score
+                // grid fashion?
+                // a 2wide by ilong grid
+                // grows by i+1 every time the game is played
+                // store
+        // if function conclusion() runs,
+            // Then var scoreboard[i+1]
+            // store initial prompt in scoreboard[i][0]
+            // store userScore in scoreboard[i][1]
+
+
+}
 
 
 
