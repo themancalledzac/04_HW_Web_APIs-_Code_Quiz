@@ -1,4 +1,4 @@
-.quiz_box {
+.quizBox {
   max-width: 50%;
   height: 500px;
   background-color: rgb(240, 240, 240);
@@ -8,10 +8,34 @@
   -moz-box-shadow: 0px 0px 17px -1px rgba(110, 110, 110, 0.65);
   box-shadow: 0px 0px 17px -1px rgba(110, 110, 110, 0.65);
   display: flex;
+  flex-wrap: wrap;
 }
 
+.quizBox.header {
+  width: 100%;
+}
 .question {
-  flex: flex;
+  flex: auto;
   width: auto;
   margin: auto;
+  text-align: center;
+}
+
+.btnInitial {
+  width: 100%;
+  flex: auto;
+  text-align: center;
+  margin: auto;
+}
+
+.btnInitial.button {
+  height: 20px;
+  background-color: blue;
+  padding: 15px 32px;
+}
+
+#btnInitial {
+  height: 20px;
+  background-color: blue;
+  padding: 15px 32px;
 }
