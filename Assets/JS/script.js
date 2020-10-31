@@ -10,8 +10,7 @@
 // questions.appendChild(btnInitial);
 // btnInitial.setAttribute("style", "padding:50px; background-color:grey");
 
-var btnOne = document.createElement("button");
-btnOne.textContent = "";
+
 
 var userScore = 0;
 
@@ -90,34 +89,24 @@ var quizQuestions = [
     
 ]
 
-//  Do we need a variable for each of the 4 buttons?
-//  var btn1
-//  var btn2
-//  var btn3
-//  var btn4
-//  Each of these buttons are given new data for each questions[i]
+// display question
+document.getElementById("btnInitial").addEventListener("click", startGame);
+// btnInitial.addEventListener("click", startGame) 
+
+
+    // When our initialbutton is clicked, 
+        // Hide initial question
+        // startGame function (init function)
+        // go back to questions[0]
 
 
 
+function startGame() {
+    document.getElementById('btnInitial').style.display = 'none'; 
 
-
-
-
-// // display question
-
-// btnInitial.addEventListener("click", startGame) {
-//     // When our initialbutton is clicked, 
-//         // Hide initial question
-//         // startGame function (init function)
-//         // go back to questions[0]
-
-// };
-
-// function startGame() {
-
-//     // run function timer
-//     // run function quiz
-// }
+    // run function timer
+    // run function quiz
+};
 
 
 // function timer() {
