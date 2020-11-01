@@ -94,16 +94,18 @@ document.getElementById("btnInitial").addEventListener("click", startGame);
 // btnInitial.addEventListener("click", startGame) 
 
 
-    // When our initialbutton is clicked, 
-        // Hide initial question
-        // startGame function (init function)
-        // go back to questions[0]
+
+
 
 
 
 function startGame() {
-    document.getElementById('btnInitial').style.display = 'none'; 
-
+            // When our initialbutton is clicked, 
+                // Hide initial question    
+        document.getElementById('btnInitial').style.display = 'none'; 
+        
+        // startGame function (init function)
+        // go back to questions[0]
     // run function timer
     // run function quiz
 };
