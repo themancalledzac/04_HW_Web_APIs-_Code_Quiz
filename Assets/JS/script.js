@@ -3,8 +3,10 @@
 var countdown;
 var questionPointer = [0];
 var userScore = 0;
+var startingTimer = 90;
 var bodyEl = document.querySelector("quizContainer");
 var btnInitialEl = document.getElementById("btnInitial");
+var timerEl = document.getElementById("timer");
 
 
 var scoreboard = [
@@ -92,12 +94,13 @@ document.getElementById("btnInitial").addEventListener("click", startGame);
 function startGame() {
             // When our initialbutton is clicked, 
                 // Hide initial question    
-    for (let i=0; i<quizQuestions.length; i++) {
-        console.log(quizQuestions[i]);
-    }    
-
     btnInitialEl.style.display = 'none'; 
+            // Display four possible answer buttons.
     document.getElementById('btnAllFour').style.display = 'flex';
+            //start countdown
+    timerEl.style.display = 'flex';
+
+
     document.getElementById("mainQuestion").textContent = quizQuestions[0].question;
     document.getElementById("btnOne").textContent = quizQuestions[0].choices[0];
     document.getElementById("btnTwo").textContent = quizQuestions[0].choices[1];
@@ -110,13 +113,15 @@ function startGame() {
     // run function quiz
 };
 
+
+    for (let i=0; i<quizQuestions.length; i++) {
+        console.log(quizQuestions[i]);
+    }  
 // console.log(quizQuestions[questionPointer].question);
 // console.log(quizQuestions[0].questions);
-bodyEl.addEventListener("click", function() {
-    questionPointer++;
-});
-
-var currentQuestion 
+// bodyEl.addEventListener("click", function() {
+//     questionPointer++;
+// });
 
 
 
