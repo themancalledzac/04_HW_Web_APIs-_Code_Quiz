@@ -1,18 +1,11 @@
 
-
-// var timeLeft = 90;
-// setInterval - // JS API
-// var questionPointer = [0];
-
-// Create initial button
-// var btnInitial = document.createElement("button");
-// btnInitial.textContent = "Click to start quiz";
-// questions.appendChild(btnInitial);
-// btnInitial.setAttribute("style", "padding:50px; background-color:grey");
-
-
-
+    // Global Variables ------------------------------------------------------------------------------
+var countdown;
+var questionPointer = [0];
 var userScore = 0;
+var bodyEl = document.querySelector("quizContainer");
+var btnInitialEl = document.getElementById("btnInitial");
+
 
 var scoreboard = [
     {
@@ -24,10 +17,9 @@ var scoreboard = [
         Score: "score"
     }
 ]
-
 var quizQuestions = [
     {
-        question: "The amount of light on a photograph is known as the:",
+        question: "The amount of light on a photograph is known as the: ",
         choices: ["Exposure", "Shutter Speed", "Contrast", "Aperture"],
         answer: 0
     },
@@ -89,26 +81,44 @@ var quizQuestions = [
     
 ]
 
-// display question
+
+
+
+    // Initiate quiz button --------------------------------------------------------------------------
 document.getElementById("btnInitial").addEventListener("click", startGame);
-// btnInitial.addEventListener("click", startGame) 
+    // btnInitial.addEventListener("click", startGame) 
 
-
-
-
-
-
-
+    // Start Game Function ---------------------------------------------------------------------------
 function startGame() {
             // When our initialbutton is clicked, 
                 // Hide initial question    
-        document.getElementById('btnInitial').style.display = 'none'; 
-        
+    for (let i=0; i<quizQuestions.length; i++) {
+        console.log(quizQuestions[i]);
+    }    
+
+    btnInitialEl.style.display = 'none'; 
+    document.getElementById('btnAllFour').style.display = 'flex';
+    document.getElementById("mainQuestion").textContent = quizQuestions[0].question;
+    document.getElementById("btnOne").textContent = quizQuestions[0].choices[0];
+    document.getElementById("btnTwo").textContent = quizQuestions[0].choices[1];
+    document.getElementById("btnThree").textContent = quizQuestions[0].choices[2];
+    document.getElementById("btnFour").textContent = quizQuestions[0].choices[3];
+
         // startGame function (init function)
         // go back to questions[0]
     // run function timer
     // run function quiz
 };
+
+// console.log(quizQuestions[questionPointer].question);
+// console.log(quizQuestions[0].questions);
+bodyEl.addEventListener("click", function() {
+    questionPointer++;
+});
+
+var currentQuestion 
+
+
 
 
 // function timer() {
@@ -117,7 +127,6 @@ function startGame() {
 
 // }
 
-// // container for all 4 buttons
 // // addEventListener for the 4 buttons
     
 

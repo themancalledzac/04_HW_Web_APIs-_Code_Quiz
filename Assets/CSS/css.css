@@ -53,5 +53,11 @@
   background-color: rgb(255, 255, 255);
 }
 
-.btnInitial.button {
+.btnFour {
+  max-width: 25%;
+  flex: 1 1 0;
+}
+
+.btnAllFour {
+  display: flex;
 }
