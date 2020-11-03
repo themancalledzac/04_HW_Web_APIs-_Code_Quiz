@@ -4,6 +4,7 @@ var countdown;
 var questionPointer = 0;
 var userScore = 0;
 var timerEl = document.getElementById("timer");
+var timer2El = document.getElementById("timer2");
 var bodyEl = document.querySelector("quizContainer");
 var btnInitialEl = document.getElementById("btnInitial");
 
@@ -107,7 +108,7 @@ function startGame() {
 
     //---------------------------------------------------- Set Timer to 90 seconds, and display in timerEl----------------------//
 var timeLeft = 90;
-timerEl.textContent += timeLeft;
+
 
 
 
@@ -117,6 +118,7 @@ timerEl.textContent += timeLeft;
         if(timeLeft <= 0) {
             clearInterval(timer);
         }
+        timer2El.textContent = timeLeft;
         timeLeft--;
     }, 1000);
 
@@ -129,6 +131,7 @@ function quiz() {
             // For loop for each question to be asked.
     for (let i=0; i<quizQuestions.length; i++) {
         console.log(quizQuestions[i]);
+
             // for each i, all questions should be properly populated.
             // Display questions[i]        
             // Display questions.choices[0-3]
@@ -137,6 +140,12 @@ function quiz() {
         document.getElementById("btnTwo").textContent = quizQuestions[i].choices[1];
         document.getElementById("btnThree").textContent = quizQuestions[i].choices[2];
         document.getElementById("btnFour").textContent = quizQuestions[i].choices[3];
+            // if button[i] === true;
+        if (condition) {
+            //
+        }
+
+            // 
 
             // Do we put the btn.onclick inside this function? or split it up?
             // Event listener for which button is clicked.
