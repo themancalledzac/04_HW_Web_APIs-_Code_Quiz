@@ -3,6 +3,7 @@
 var countdown;
 var questionPointer = 0;
 var userScore = 0;
+var userScoreWrong = 0;
 var timerEl = document.getElementById("timer");
 var timer2El = document.getElementById("timer2");
 var bodyEl = document.querySelector("quizContainer");
@@ -138,11 +139,11 @@ function quiz() {
             // Display questions.choices[0-3]
 
 
-        document.getElementById("mainQuestion").textContent = quizQuestions[questionPointer].question;
-        document.getElementById("btnOne").textContent = quizQuestions[questionPointer].choices[0];
-        document.getElementById("btnTwo").textContent = quizQuestions[questionPointer].choices[1];
-        document.getElementById("btnThree").textContent = quizQuestions[questionPointer].choices[2];
-        document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
+    document.getElementById("mainQuestion").textContent = quizQuestions[questionPointer].question;
+    document.getElementById("btnOne").textContent = quizQuestions[questionPointer].choices[0];
+    document.getElementById("btnTwo").textContent = quizQuestions[questionPointer].choices[1];
+    document.getElementById("btnThree").textContent = quizQuestions[questionPointer].choices[2];
+    document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
             // if button[i] === true;
             
       
@@ -157,33 +158,30 @@ function quiz() {
             // run fuction conclusion()
             // else move to quesions[i+1]        
             
-            // }      
-            
-        };
-        document.getElementById("btnAllFour").addEventListener("click", (event) => {
+            // }    
+};
+
+document.getElementById("btnAllFour").addEventListener("click", (event) => {
             
             
             // Event listener for which button is clicked.
-            if (quizQuestions[questionPointer].answer === event.target.getAttribute("data-index")) {
-               console.log("correct");
-            }
-            else {
-                console.log("wrong");
+    if (quizQuestions[questionPointer].answer == event.target.getAttribute("data-index")) {
+        userScore++;
+        console.log(quizQuestions[questionPointer].answer);
+        console.log(event.target.getAttribute("data-index"));
+        console.log("correct");
+    }
+    else {
+        userScoreWrong++;
+        console.log(quizQuestions[questionPointer].answer);
+        console.log(event.target.getAttribute("data-index"));
+        console.log("wrong");
                 // timeLeft = timeLeft-10000;
-            }
-
-            
-            
-            questionPointer++;
-            quiz();
-            console.log(event.target.getAttribute("data-index"));
-            // if (event) {
-    
-            //     // var correctAnswer === 
-            //     console.log(event);
+    }           
+    questionPointer++;
+    quiz();
                 
-            // }
-        })
+})
 
 // function conclusion() {
 
