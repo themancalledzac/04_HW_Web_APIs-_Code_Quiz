@@ -64,7 +64,8 @@
 
 #timer {
   flex: auto;
-  width: 100%;
+  width: 50px;
+  height: 20px;
   margin: auto;
-  text-align: center;
+  text-align: right;
 }
