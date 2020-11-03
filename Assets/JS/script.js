@@ -85,7 +85,6 @@ var quizQuestions = [
 
 
 
-
     //-------------------------------------------------- Initiate quiz button --------------------------------------------------//
 document.getElementById("btnInitial").addEventListener("click", startGame);
     // btnInitial.addEventListener("click", startGame) 
@@ -111,7 +110,6 @@ var timeLeft = 90;
 
 
 
-
     //---------------------------------------------------- START TIMER Function ------------------------------------------------//
 
     var timer = setInterval(function() {
@@ -128,41 +126,64 @@ var timeLeft = 90;
 
     //---------------------------------------------------- Start QUIZ Function -------------------------------------------------//
 function quiz() {
-            // For loop for each question to be asked.
-    for (let i=0; i<quizQuestions.length; i++) {
-        console.log(quizQuestions[i]);
+    //         // For loop for each question to be asked.
+    // for (let i=0; i<quizQuestions.length; i++) {
+    //     console.log(quizQuestions[i]);
+        
+    //     var correctAnswer = quizQuestions[i].answer
+        
 
             // for each i, all questions should be properly populated.
             // Display questions[i]        
             // Display questions.choices[0-3]
-        document.getElementById("mainQuestion").textContent = quizQuestions[i].question;
-        document.getElementById("btnOne").textContent = quizQuestions[i].choices[0];
-        document.getElementById("btnTwo").textContent = quizQuestions[i].choices[1];
-        document.getElementById("btnThree").textContent = quizQuestions[i].choices[2];
-        document.getElementById("btnFour").textContent = quizQuestions[i].choices[3];
+
+
+        document.getElementById("mainQuestion").textContent = quizQuestions[questionPointer].question;
+        document.getElementById("btnOne").textContent = quizQuestions[questionPointer].choices[0];
+        document.getElementById("btnTwo").textContent = quizQuestions[questionPointer].choices[1];
+        document.getElementById("btnThree").textContent = quizQuestions[questionPointer].choices[2];
+        document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
             // if button[i] === true;
-        if (condition) {
-            //
-        }
+            
+      
+
 
             // 
 
             // Do we put the btn.onclick inside this function? or split it up?
-            // Event listener for which button is clicked.
             // if questionPointer[i] = answer[i] , move to questions[i+1]
             // else timeLeft = -10;
             // if timeLeft <= 0,
-                // run fuction conclusion()
+            // run fuction conclusion()
             // else move to quesions[i+1]        
-        
-    }      
+            
+            // }      
+            
+        };
+        document.getElementById("btnAllFour").addEventListener("click", (event) => {
+            
+            
+            // Event listener for which button is clicked.
+            if (quizQuestions[questionPointer].answer === event.target.getAttribute("data-index")) {
+               console.log("correct");
+            }
+            else {
+                console.log("wrong");
+                // timeLeft = timeLeft-10000;
+            }
 
-
-
-
-
-};
-
+            
+            
+            questionPointer++;
+            quiz();
+            console.log(event.target.getAttribute("data-index"));
+            // if (event) {
+    
+            //     // var correctAnswer === 
+            //     console.log(event);
+                
+            // }
+        })
 
 // function conclusion() {
 
