@@ -1,5 +1,7 @@
 body {
-  background-color: cadetblue;
+  background-image: url(/Assets/images/DSC_4350.jpg);
+  background-size: cover;
+  background-position-y: top;
 }
 
 .quizBox {

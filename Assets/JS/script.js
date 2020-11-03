@@ -172,7 +172,7 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
         console.log("correct");
     }
     else {
-        userScoreWrong++;
+        userScore++;
         console.log(quizQuestions[questionPointer].answer);
         console.log(event.target.getAttribute("data-index"));
         console.log("wrong");
@@ -180,7 +180,7 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
     }           
     questionPointer++;
     quiz();
-                
+        console.log()           
 })
 
 // function conclusion() {
