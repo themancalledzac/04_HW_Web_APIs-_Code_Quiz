@@ -104,6 +104,7 @@ function startGame() {
     timerEl.style.display = 'flex';
             //start countdown
     quiz();
+    timer();
 };
 
     //---------------------------------------------------- Set Timer to 90 seconds, and display in timerEl----------------------//
@@ -144,6 +145,8 @@ function quiz() {
     document.getElementById("btnTwo").textContent = quizQuestions[questionPointer].choices[1];
     document.getElementById("btnThree").textContent = quizQuestions[questionPointer].choices[2];
     document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
+
+    document.getElementById('Score').textContent = userScore;
             // if button[i] === true;
             
       
@@ -172,11 +175,11 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
         console.log("correct");
     }
     else {
-        userScore++;
+        userScore--;
         console.log(quizQuestions[questionPointer].answer);
         console.log(event.target.getAttribute("data-index"));
         console.log("wrong");
-                // timeLeft = timeLeft-10000;
+                timeLeft -= 10;
     }           
     questionPointer++;
     quiz();
