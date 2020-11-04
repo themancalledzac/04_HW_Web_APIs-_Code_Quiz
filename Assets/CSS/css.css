@@ -2,6 +2,37 @@ body {
   background-image: url(/Assets/images/DSC_4350.jpg);
   background-size: cover;
   background-position-y: top;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  background-color: rgba(58, 86, 87, 0.473);
+  flex: auto;
+  width: 100%;
+  color: white;
+}
+
+.bodyMain {
+  flex: auto;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 0;
+}
+
+li {
+  float: left;
+  width: auto;
+  flex: auto;
+  text-align: center;
+  height: 2em;
+  padding: 10px 0;
 }
 
 .quizBox {

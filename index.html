@@ -7,23 +7,41 @@
     <link rel="stylesheet" type="text/css" href="./Assets/CSS/css.css">
 </head>
 <body>
-    
-    <div class="quizBox">
-        <div class="quizContainer">
-            <h1 id="mainQuestion" class="header header_question">Photography Quiz</h1>
-            <div class="questionContainer">
-                <button id="btnInitial" class="btn btnInitial">Click to play!</button>
-                <div id="btnAllFour" class="btn btnAllFour" style="display:none">
-                    <!-- data-index to help our JS link to the button. wild -->
-                    <button id="btnOne" data-index="0" class="btn btnFour">asdfasdf</button>
-                    <button id="btnTwo" data-index="1" class="btn btnFour">asdfasdf</button>
-                    <button id="btnThree" data-index="2" class="btn btnFour">asdfasdf</button>
-                    <button id="btnFour" data-index="3" class="btn btnFour">asdfasdgasdf</button>
+    <nav class="navbar">
+        <ul>
+            <li><a id="Home" class="navBarItem">Home</a></li>
+                <!-- HOME will always reload page, back to initial homescreen------------------------------------------------JS -->
+            <li><a id="HighScore" class="navBarItem">Hight Score</a></li>
+                <!-- HIGH SCORE should fade and change to whatever the current high score is---------------------------------JS -->
+            <li><a id="Score" class="navBarItem">Score</a></li>
+                <!-- SCORE changes to current player score-------------------------------------------------------------------JS -->
+            <li><a id="Timer" class="navBarItem">Timer</a></li>
+                <!-- We should be able to COPY this code to work for the rest of the items.----------------------------------JS -->
+            <li id="timer" style="display:none">Time Left: <p id="timer2"></p></li>
+        </ul>            
+    </nav>
+    <div class="bodyMain">
 
-                </div>
+        <div class="quizBox">
+                <!-- CONTAINER is max 50% width -->
+            <div class="quizContainer">
+                <h1 id="mainQuestion" class="header header_question">Photography Quiz</h1>
+                    <!-- Container contains max 100% width, auto?, 50% height. Padding 25px,---------------------------------------------JS -->
+                <div class="questionContainer">
+                    <!-- Container contains max 100% width, auto?, 50% height. Padding 25px, --------------------------------------------JS -->
+                    <button id="btnInitial" class="btn btnInitial">Click to play!</button>
+                    <div id="btnAllFour" class="btn btnAllFour" style="display:none">
+                        <!-- data-index to help our JS link to the button. wild -->
+                        
+                        <button id="btnOne" data-index="0" class="btn btnFour">asdfasdf</button>
+                            <!--  -->
+                        <button id="btnTwo" data-index="1" class="btn btnFour">asdfasdf</button>
+                        <button id="btnThree" data-index="2" class="btn btnFour">asdfasdf</button>
+                        <button id="btnFour" data-index="3" class="btn btnFour">asdfasdgasdf</button>
+                    </div>
+                </div>            
             </div>
-            <div id="timer" style="display:none">Time Left: <p id="timer2"></p></div>
-    </div>
+        </div>
     </div>
     <script src="./Assets/JS/script.js"></script>
 </body>

@@ -104,7 +104,14 @@ function startGame() {
     timerEl.style.display = 'flex';
             //start countdown
     quiz();
-    timer();
+    // timer();
+    var timer = setInterval(function() {
+        if(timeLeft <= 0) {
+            clearInterval(timer);
+        }
+        timer2El.textContent = timeLeft;
+        timeLeft--;
+    }, 1000);
 };
 
     //---------------------------------------------------- Set Timer to 90 seconds, and display in timerEl----------------------//
@@ -114,13 +121,7 @@ var timeLeft = 90;
 
     //---------------------------------------------------- START TIMER Function ------------------------------------------------//
 
-    var timer = setInterval(function() {
-        if(timeLeft <= 0) {
-            clearInterval(timer);
-        }
-        timer2El.textContent = timeLeft;
-        timeLeft--;
-    }, 1000);
+
 
 
 
