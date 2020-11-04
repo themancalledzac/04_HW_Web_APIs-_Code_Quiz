@@ -1,18 +1,24 @@
 
     //--------------------------------------------------- Global Variables -----------------------------------------------------//
-var countdown;
-var questionPointer = 0;
-var userScore = 0;
-var userScoreWrong = 0;
-var timerEl = document.getElementById("timer");
-var timer2El = document.getElementById("timer2");
-var bodyEl = document.querySelector("quizContainer");
-var btnInitialEl = document.getElementById("btnInitial");
-
-
-var scoreboard = [
-    {
-        User: "",
+    var countdown;
+    var questionPointer = 0;
+    var userScore = 0;
+    var userScoreWrong = 0;
+    var timerEl = document.getElementById("timer");
+    var timer2El = document.getElementById("timer2");
+    var bodyEl = document.querySelector("quizContainer");
+    var btnInitialEl = document.getElementById("btnInitial");
+    //-------------------------HOME BUTTON CLICK to refresh page----------------------------------------------------------------//
+    var homeEl = document.getElementById('Home');
+    function reload() {
+        reload = location.reload();
+    }
+    homeEl.addEventListener("click", reload, false);
+    
+    //--------------------------SCOREBOARD variable. does this work?------------------------------------------------------------//
+    var scoreboard = [
+        {
+            User: "",
         Score: ""
     },
     {
@@ -20,6 +26,7 @@ var scoreboard = [
         Score: "score"
     }
 ]
+    //--------------------------Quiz Questions Object Container-----------------------------------------------------------------//
 var quizQuestions = [
     {
         question: "The amount of light on a photograph is known as the: ",
@@ -101,7 +108,8 @@ function startGame() {
             // Display four possible answer buttons.
     document.getElementById('btnAllFour').style.display = 'flex';
             //display countdown
-    timerEl.style.display = 'flex';
+            // commented this out so it would stop showing up. we only want the timer in the timer button.---------------//
+    // timerEl.style.display = 'flex';
             //start countdown
     quiz();
     // timer();
@@ -115,7 +123,7 @@ function startGame() {
 };
 
     //---------------------------------------------------- Set Timer to 90 seconds, and display in timerEl----------------------//
-var timeLeft = 90;
+var timeLeft = 74;
 
 
 
@@ -148,6 +156,7 @@ function quiz() {
     document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
 
     document.getElementById('Score').textContent = userScore;
+
             // if button[i] === true;
             
       
