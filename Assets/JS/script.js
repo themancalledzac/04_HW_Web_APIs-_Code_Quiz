@@ -8,6 +8,7 @@
     var timer2El = document.getElementById("timer2");
     var bodyEl = document.querySelector("quizContainer");
     var btnInitialEl = document.getElementById("btnInitial");
+    var timeLeft = 74;
     //-------------------------HOME BUTTON CLICK to refresh page----------------------------------------------------------------//
     var homeEl = document.getElementById('Home');
     function reload() {
@@ -26,6 +27,10 @@
         Score: "score"
     }
 ]
+
+//JSON STRINGIFY
+
+
     //--------------------------Quiz Questions Object Container-----------------------------------------------------------------//
 var quizQuestions = [
     {
@@ -117,13 +122,12 @@ function startGame() {
         if(timeLeft <= 0) {
             clearInterval(timer);
         }
-        timer2El.textContent = timeLeft;
+        timerEl.textContent = "Time Left: " + timeLeft;
         timeLeft--;
     }, 1000);
 };
 
     //---------------------------------------------------- Set Timer to 90 seconds, and display in timerEl----------------------//
-var timeLeft = 74;
 
 
 
@@ -155,7 +159,7 @@ function quiz() {
     document.getElementById("btnThree").textContent = quizQuestions[questionPointer].choices[2];
     document.getElementById("btnFour").textContent = quizQuestions[questionPointer].choices[3];
 
-    document.getElementById('Score').textContent = userScore;
+    document.getElementById('Score').textContent = "Score: " + userScore;
 
             // if button[i] === true;
             
@@ -189,27 +193,36 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
         console.log(quizQuestions[questionPointer].answer);
         console.log(event.target.getAttribute("data-index"));
         console.log("wrong");
-                timeLeft -= 10;
+        timeLeft -= 10;
+        conclusion();
     }           
     questionPointer++;
     quiz();
         console.log()           
 })
 
-// function conclusion() {
+// Once time 
 
-//         // Prompt user to save Initials
-//         // on enter
-//         // display leaderboard
-//                 // initials, with score
-//                 // grid fashion?
-//                 // a 2wide by ilong grid
-//                 // grows by i+1 every time the game is played
-//                 // store
-//         // if function conclusion() runs,
-//             // Then var scoreboard[i+1]
-//             // store initial prompt in scoreboard[i][0]
-//             // store userScore in scoreboard[i][1]
+function conclusion() {
+
+}
+        // persist my data - LOCAL STORAGE - browser API
+            // localStorage.getItem - // refer to what you call it, onlyu thing it takes
+            // localStorage.setItem - // takes in 2 things, what you call it, and the value
+            // // Front end database - FIREBASE
+            // free databases - MONGO 
+                // database BRIDGE 
 
 
-// }
+        // Prompt user to save Initials
+        // on enter
+        // display leaderboard
+                // initials, with score
+                // grid fashion?
+                // a 2wide by ilong grid
+                // grows by i+1 every time the game is played
+                // store
+        // if function conclusion() runs,
+            // Then var scoreboard[i+1]
+            // store initial prompt in scoreboard[i][0]
+            // store userScore in scoreboard[i][1]
