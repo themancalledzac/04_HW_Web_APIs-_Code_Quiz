@@ -8,6 +8,7 @@
     var timer2El = document.getElementById("timer2");
     var bodyEl = document.querySelector("quizContainer");
     var btnInitialEl = document.getElementById("btnInitial");
+    var btnAllFourEl = document.getElementById('btnAllFour');
     var timeLeft = 74;
     //-------------------------HOME BUTTON CLICK to refresh page----------------------------------------------------------------//
     var homeEl = document.getElementById('Home');
@@ -111,7 +112,7 @@ function startGame() {
                 // Hide initial question    
     btnInitialEl.style.display = 'none'; 
             // Display four possible answer buttons.
-    document.getElementById('btnAllFour').style.display = 'flex';
+    btnAllFourEl.style.display = 'flex';
             //display countdown
             // commented this out so it would stop showing up. we only want the timer in the timer button.---------------//
     // timerEl.style.display = 'flex';
@@ -194,18 +195,27 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
         console.log(event.target.getAttribute("data-index"));
         console.log("wrong");
         timeLeft -= 10;
-        conclusion();
+ 
     }           
     questionPointer++;
     quiz();
-        console.log()           
+    
+    if (questionPointer === quizQuestions.length) {
+         conclusion();  
+    }
+    if (timeLeft <= 0) {
+        conclusion();
+    }
 })
 
 // Once time 
 
 function conclusion() {
+    document.getElementById("mainQuestion").textContent = "High Scores";
+    btnAllFourEl.style.display = 'none';
 
 }
+
         // persist my data - LOCAL STORAGE - browser API
             // localStorage.getItem - // refer to what you call it, onlyu thing it takes
             // localStorage.setItem - // takes in 2 things, what you call it, and the value
