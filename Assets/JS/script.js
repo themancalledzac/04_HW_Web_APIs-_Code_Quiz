@@ -204,6 +204,7 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
          conclusion();  
     }
     if (timeLeft <= 0) {
+
         conclusion();
     }
 })
@@ -213,6 +214,7 @@ document.getElementById("btnAllFour").addEventListener("click", (event) => {
 function conclusion() {
     document.getElementById("mainQuestion").textContent = "High Scores";
     btnAllFourEl.style.display = 'none';
+    
 
 }
 
