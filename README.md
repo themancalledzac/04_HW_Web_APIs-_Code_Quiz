@@ -1,6 +1,6 @@
 # 04_HW_Web_APIs-\_Code_Quiz
 
-## [Live Site](https://themancalledzac.github.io/04_HW_Web_APIs-_Code_Quiz/)
+## [Live Site](https://themancalledzac.github.io/Photography-Quiz/)
 
 ## Your Task
 
